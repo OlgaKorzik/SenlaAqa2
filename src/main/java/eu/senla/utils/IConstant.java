@@ -1,4 +1,4 @@
-package eu.senla;
+package eu.senla.utils;
 
 public interface IConstant {
     String USERNAME = "standard_user";

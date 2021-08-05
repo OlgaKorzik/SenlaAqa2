@@ -1,6 +1,7 @@
 package eu.senla;
 
 import com.codeborne.selenide.SelenideElement;
+import eu.senla.utils.IConstant;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;

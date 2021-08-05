@@ -15,6 +15,6 @@ public class BaseClass {
 }
 @AfterAll
     public void tearDown(){
-   closeWebDriver();
+    closeWebDriver();
 }
 }
