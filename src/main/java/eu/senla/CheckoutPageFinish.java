@@ -21,21 +21,17 @@ public void cancel(){
     cancel.click();
 }
 
-public String getElementDouble(SelenideElement selenideElement, int i){
-    String str = selenideElement.getText().substring(i);
-    return str;
+public String getElementDouble(SelenideElement selenideElement){
+    String [] str = selenideElement.getText().split("\\$");
+    return str[1];
 }
     
 public Double sumOrder(){
-    Double sum = 0.0;
-    for (int i=0; i<priceGoods.size(); i++){
-        Double n= doubleNamber(priceGoods.get(i),1);
-        sum+=n;
-    }
+    Double sum = priceGoods.stream().map(a->doubleNamber(a)).mapToDouble(i->i).sum();
     return sum;
 }
-public Double doubleNamber(SelenideElement selenideElement, int i){
-    Double namber = Double.parseDouble(getElementDouble(selenideElement, i));
+public Double doubleNamber(SelenideElement selenideElement){
+    Double namber = Double.parseDouble(getElementDouble(selenideElement));
     return namber;
 }
 }

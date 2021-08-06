@@ -50,7 +50,7 @@ public class PageMetods {
         return sum;
     }
     public Double sumGoodsOrderForPage(){
-        Double sumOfPage = checkoutPageFinish.doubleNamber(checkoutPageFinish.sum, 13);
+        Double sumOfPage = checkoutPageFinish.doubleNamber(checkoutPageFinish.sum);
         return sumOfPage;
     }
 }
