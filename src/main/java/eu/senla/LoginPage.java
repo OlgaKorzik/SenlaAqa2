@@ -8,9 +8,9 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class LoginPage {
-    SelenideElement loginInput = $(By.id("user-name"));
-    SelenideElement passwordInput = $("#password");
-    SelenideElement singInButton = $(By.name("login-button"));
+    public SelenideElement loginInput = $(By.id("user-name"));
+    public SelenideElement passwordInput = $("#password");
+    public SelenideElement singInButton = $(By.name("login-button"));
     SelenideElement menuButton = $(By.id("react-burger-menu-btn"));
     SelenideElement logout = $(By.id("logout_sidebar_link"));
 

@@ -7,9 +7,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class CartPage {
-    SelenideElement checkoutButton = $(By.id("checkout"));
-    ElementsCollection removeButton = $$(By.xpath("//button[text () = 'Remove']"));
-    SelenideElement goods = $("#cart_item");
+    public SelenideElement checkoutButton = $(By.id("checkout"));
+    public ElementsCollection removeButton = $$(By.xpath("//button[text () = 'Remove']"));
+    public SelenideElement goods = $("#cart_item");
+
 
     public void removeGoods (){
         for(SelenideElement remove : removeButton){
