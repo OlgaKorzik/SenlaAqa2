@@ -16,20 +16,20 @@ public class OrderTest extends BaseClass{
 
     @Test
     @DisplayName("Check to canseling of order")
-    public void cancelOrder(){
+    public void cancelOrderTest(){
         pageMetods.cancelOrder();
         String urlPage = url();
         assertEquals(IConstant.URLPAGE,urlPage,"User doesn't logged out");
     }
     @Test
     @DisplayName("Check to delete of goods from cart")
-    public void deleteGoods(){
+    public void deleteGoodsTest(){
     pageMetods.deleteOrderForCart();
     }
 
     @Test
     @DisplayName("Check to calculation of the amount in the order")
-    public void sumOrder(){
+    public void sumOrderTest(){
         pageMetods.transitionForCheckoutPage();
         Double sum = pageMetods.sumGoodsOrder();
         Double sumOfPage = pageMetods.sumGoodsOrderForPage();

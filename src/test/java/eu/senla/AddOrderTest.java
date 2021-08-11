@@ -13,7 +13,7 @@ public class AddOrderTest extends BaseClass{
 }
 @Test
 @DisplayName("Check to adding of new order")
-    public void addNewOrder(){
+    public void addNewOrderTest(){
        pageMetods.addOrder();
        String element = pageMetods.getTextForFinishPage();
        assertEquals("THANK YOU FOR YOUR ORDER",element, "Order don't add");
