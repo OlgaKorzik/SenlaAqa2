@@ -11,5 +11,5 @@ import org.junit.runner.RunWith;
         tags = "@test",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class Runner {
+public class RunnerTest {
 }
