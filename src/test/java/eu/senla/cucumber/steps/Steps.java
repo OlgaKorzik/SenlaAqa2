@@ -3,9 +3,9 @@ import eu.senla.CartPage;
 import eu.senla.InventoryPage;
 import eu.senla.LoginPage;
 import eu.senla.utils.IConstant;
-import io.cucumber.java.ru.Допустим;
-import io.cucumber.java.ru.Тогда;
+import io.cucumber.java.ru.*;
 import org.openqa.selenium.By;
+
 
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
