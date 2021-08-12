@@ -24,7 +24,7 @@
                 <configuration>
                 <includes>
                     <exclude>
-                        **/CucumberRunner.java
+                        **/RunnerTest.java
                     </exclude>
                 </includes>
                 </configuration>
