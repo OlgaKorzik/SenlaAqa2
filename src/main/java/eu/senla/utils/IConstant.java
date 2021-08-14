@@ -1,8 +1,8 @@
 package eu.senla.utils;
 
-public interface IConstant {
-    String USERNAME = "standard_user";
-    String PASSWORD = "secret_sauce";
-    String URL = "https://www.saucedemo.com/";
-    String URLPAGE = "https://www.saucedemo.com/inventory.html";
+public final class IConstant {
+   public static String USERNAME = "standard_user";
+    public static String PASSWORD = "secret_sauce";
+    public static String URL = "https://www.saucedemo.com/";
+    public static String URLPAGE = "https://www.saucedemo.com/inventory.html";
 }

@@ -1,8 +1,9 @@
 package eu.senla;
-import eu.senla.utils.IConstant;
+
 import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.WebDriverRunner.url;
+import static eu.senla.utils.IConstant.URLPAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -11,16 +12,18 @@ public class OrderTest extends BaseClass{
 
     @BeforeEach
     public void loginAndAddGoods(){
-        pageMetods.loginPageAnaAddGaoods();
+        pageMetods.loginPageAndAddGoods();
     }
+
 
     @Test
     @DisplayName("Check to canseling of order")
     public void cancelOrderTest(){
         pageMetods.cancelOrder();
         String urlPage = url();
-        assertEquals(IConstant.URLPAGE,urlPage,"User doesn't logged out");
+        assertEquals(URLPAGE,urlPage,"User doesn't logged out");
     }
+
     @Test
     @DisplayName("Check to delete of goods from cart")
     public void deleteGoodsTest(){

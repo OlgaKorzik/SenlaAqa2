@@ -1,10 +1,11 @@
 package eu.senla;
 
 import com.codeborne.selenide.SelenideElement;
-import eu.senla.utils.IConstant;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Selenide.*;
+import static eu.senla.utils.IConstant.*;
 
 
 public class LoginPage {
@@ -14,16 +15,17 @@ public class LoginPage {
     SelenideElement menuButton = $(By.id("react-burger-menu-btn"));
     SelenideElement logout = $(By.id("logout_sidebar_link"));
 
+    @Step("Set login and password")
     public void login() {
-        open(IConstant.URL);
-        loginInput.sendKeys(IConstant.USERNAME);
-        passwordInput.sendKeys(IConstant.PASSWORD);
+        loginInput.sendKeys(USERNAME);
+        passwordInput.sendKeys(PASSWORD);
         singInButton.click();
     }
-
+    @Step("Open login page")
     public void loginOpenPage(){
-        open(IConstant.URL);
+        open(URL);
     }
+    @Step("Logout from user")
     public void logout (){
         menuButton.click();
         logout.click();

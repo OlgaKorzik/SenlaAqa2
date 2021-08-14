@@ -1,5 +1,7 @@
 package eu.senla;
 
+import io.qameta.allure.Step;
+
 import static com.codeborne.selenide.Condition.exist;
 public class PageMetods {
     private LoginPage loginPage = new LoginPage();
@@ -8,6 +10,7 @@ public class PageMetods {
     private CheckoutPage checkoutPage = new CheckoutPage();
     private CheckoutPageFinish checkoutPageFinish = new CheckoutPageFinish();
 
+    @Step("Add order")
     public void addOrder(){
         inventoryPage.addGoodsToCart(5);
         inventoryPage.transitionToCart();
@@ -16,10 +19,11 @@ public class PageMetods {
         checkoutPage.continueOrder();
         checkoutPageFinish.finishOrder();
     }
+    @Step("Get text from finish page")
     public String getTextForFinishPage(){
-        String element = checkoutPageFinish.finishWord.getText();
-        return element;
+        return checkoutPageFinish.finishWord.getText();
     }
+    @Step("Login from page")
     public void login(){
         loginPage.loginOpenPage();
         loginPage.login();
@@ -27,30 +31,34 @@ public class PageMetods {
     public void logoutPage(){
         loginPage.logout();
     }
-    public void loginPageAnaAddGaoods(){
-        loginPage.login();
+
+    @Step("Login from page and add goods")
+    public void loginPageAndAddGoods(){
+        login();
         inventoryPage.addGoodsToCart(5);
         inventoryPage.transitionToCart();
     }
+    @Step("Transition for checkout page")
     public void transitionForCheckoutPage(){
         cartPage.checkoutButton.click();
         checkoutPage.addInformation();
         checkoutPage.continueOrder();
     }
+    @Step("Cancel order")
     public void cancelOrder(){
         transitionForCheckoutPage();
         checkoutPageFinish.cancel();
     }
+    @Step("Delete goods of cart")
     public void deleteOrderForCart(){
         cartPage.removeGoods();
         cartPage.goods.shouldNot(exist);
     }
     public Double sumGoodsOrder(){
-        Double sum = checkoutPageFinish.sumOrder();
-        return sum;
+        return checkoutPageFinish.sumOrder();
     }
+
     public Double sumGoodsOrderForPage(){
-        Double sumOfPage = checkoutPageFinish.doubleNamber(checkoutPageFinish.sum);
-        return sumOfPage;
+        return checkoutPageFinish.doubleNamber(checkoutPageFinish.sum);
     }
 }

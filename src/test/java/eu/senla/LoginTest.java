@@ -1,9 +1,9 @@
 package eu.senla;
 
-import eu.senla.utils.IConstant;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import static com.codeborne.selenide.WebDriverRunner.url;
+import static eu.senla.utils.IConstant.URLPAGE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -15,6 +15,6 @@ public class LoginTest extends BaseClass{
 public void loginTest(){
             pageMetods.login();
             String urlPage = url();
-            assertEquals(IConstant.URLPAGE,urlPage,"User doesn't logged out");
+            assertEquals(URLPAGE,urlPage,"User doesn't logged out");
     }
 }
