@@ -10,8 +10,6 @@ public class BaseClass {
 @BeforeAll
     public void setUp(){
     Configuration.startMaximized = true;
-//    LoginPage loginPage = new LoginPage();
-//    loginPage.loginOpenPage();
 }
 @AfterAll
     public void tearDown(){

@@ -16,9 +16,9 @@ public class LoginPage {
     SelenideElement logout = $(By.id("logout_sidebar_link"));
 
     @Step("Set login and password")
-    public void login() {
-        loginInput.sendKeys(USERNAME);
-        passwordInput.sendKeys(PASSWORD);
+    public void login(String name, String pass) {
+        loginInput.sendKeys(name);
+        passwordInput.sendKeys(pass);
         singInButton.click();
     }
     @Step("Open login page")

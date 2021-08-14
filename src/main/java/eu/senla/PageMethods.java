@@ -3,7 +3,9 @@ package eu.senla;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.exist;
-public class PageMetods {
+import static eu.senla.utils.IConstant.*;
+
+public class PageMethods {
     private LoginPage loginPage = new LoginPage();
     private InventoryPage inventoryPage = new InventoryPage();
     private CartPage cartPage = new CartPage();
@@ -26,7 +28,7 @@ public class PageMetods {
     @Step("Login from page")
     public void login(){
         loginPage.loginOpenPage();
-        loginPage.login();
+        loginPage.login(USERNAME,PASSWORD);
     }
     public void logoutPage(){
         loginPage.logout();
